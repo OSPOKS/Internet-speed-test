@@ -2,12 +2,17 @@ const startButton = document.getElementById('start-button');
 const downloadSpeed = document.getElementById('download-speed');
 const uploadSpeed = document.getElementById('upload-speed');
 const resultDiv = document.getElementById('result');
+const ipAddress = document.getElementById('ip-address');
 
 startButton.addEventListener('click', () => {
     startButton.disabled = true;
     startButton.innerText = 'Testing...';
 
-    // Simulate a delay for testing purposes (replace with actual speed test logic)
+   
+    const ip = navigator.getIPAddress();
+    ipAddress.innerText = ip;
+
+   
     setTimeout(() => {
         const simulatedDownloadSpeed = Math.random() * 100;
         const simulatedUploadSpeed = Math.random() * 100;
@@ -20,4 +25,3 @@ startButton.addEventListener('click', () => {
         startButton.disabled = false;
     }, 3000); // Simulated 3-second test
 });
-
